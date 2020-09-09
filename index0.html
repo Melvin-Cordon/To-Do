@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TODO App</title>
+    <link rel="stylesheet" type="text/css" href="./styles.css" />
+  </head>
+  <body>
+    <div class="container center">
+      <h1 class="center title">My TODO App</h1>
+      <textarea type = "text" rows = "3" class = "center" id="textintodo" onClick="clearBox()" onfocusout = "restBox()">What do you need to do?</textarea>
+      <button class="button center" onClick="newTodo()">New TODO</button>
+      <ul id="todo-list" class="todo-list"></ul>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
