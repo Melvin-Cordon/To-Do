@@ -6,16 +6,17 @@ const classNames = {
 }
 
 const list = document.getElementById('todo-list')
-
+const text = document.getElementById('textintodo')
 
 function newTodo() {
 
   const todoText = document.querySelector('#textintodo').value
 
+  text.value = "What do you need to do?"
   todoElement = makeTodo(todoText)
   render(todoElement, list)
-
   return
+
 }
 
 function makeTodo(todoText) {
@@ -56,4 +57,10 @@ function render(element, destination) {
 // add css to html elements
 function addStyle(style, element) {
   element.setAttribute("class", style)
+}
+
+function textClickedClear() {
+
+  text.value = ""
+
 }
