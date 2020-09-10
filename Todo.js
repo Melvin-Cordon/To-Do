@@ -10,42 +10,48 @@ const text = document.getElementById('textintodo')
 
 function newTodo() {
 
-  const todoText = document.querySelector('#textintodo').value
 
-  text.value = "What do you need to do?"
-  todoElement = makeTodo(todoText)
+  todoElement = makeTodo()
   render(todoElement, list)
-  return
+
 
 }
 
-function makeTodo(todoText) {
-
-   const ul = document.createElement("ul")
-   addStyle(classNames.TODO_ITEM, ul)
-
+function makeTodo() {
 
    const li = document.createElement("li")
-   //addStyle(classNames.TODO_ITEM, li)
 
-   const li2 = document.createElement("li")
-   //addStyle(classNames.TODO_ITEM, li)
+   const div1 = document.createElement("div")
+   addStyle("row justify-content-center", "class", div1)
 
-   const span = document.createElement("span")
-   span.textContent = todoText
-   addStyle(classNames.TODO_TEXT, span)
+   const div2 = document.createElement("div")
+   addStyle("card", "class", div2)
+   addStyle("width: 18rem;", "style", div2)
 
-   const checkbox = document.createElement("input");
-   checkbox.setAttribute("type", "checkbox")
-   addStyle(classNames.TODO_CHECKBOX, checkbox)
+   const div3 = document.createElement("div")
+   addStyle("card-body", "class", div3)
 
-  render(span, li)
-  render(checkbox, li2)
-  render(li, ul)
-  render(li2, ul)
+   const h5 = document.createElement("h5")
+   h5.innerHTML = "Special title treatment"
+   addStyle("card-title", "class", h5)
 
+   const p = document.createElement("p")
+   p.innerHTML = "With supporting text below as a natural lead-in to additional content"
+   addStyle("card-text", "class", p)
 
-   return ul
+   const a = document.createElement("a")
+   addStyle("#", "href", a)
+   addStyle("btn btn-primary", "class", a)
+   a.innerHTML = "Go somewhere"
+
+   render(h5, div3)
+   render(p, div3)
+   render(a, div3)
+   render(div3, div2)
+   render(div2,div1)
+   render(div1, li)
+
+   return li
 
 }
 
@@ -55,8 +61,8 @@ function render(element, destination) {
 }
 
 // add css to html elements
-function addStyle(style, element) {
-  element.setAttribute("class", style)
+function addStyle(style, type, element) {
+  element.setAttribute(type, style)
 }
 
 function textClickedClear() {

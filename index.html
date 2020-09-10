@@ -1,16 +1,53 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TODO</title>
+    <title>I Work</title>
     <link rel="stylesheet" type="text/css" href="./styles.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
   <body>
     <div class="container center">
-      <h1 class="center title">TODO</h1>
-      <textarea type = "text" rows = "3" class = "center" id="textintodo" onClick="textClickedClear()" onfocusout = "restBox()">What do you need to do?</textarea>
-      <button class="button center" onClick="newTodo()">New TODO</button>
-      <ul id="todo-list" class="todo-list"></ul>
+      <h1 class="center title">I Work</h1>
+
+
+      <div class = "container">
+        <div class = "row justify-content-center">
+            <button class="btn btn-primary btn-lg" type="submit" onClick="newTodo()" >Button</button>
+        </div>
+      </div>
+
+      <div class = "container">
+      <ul id="todo-list" class="todo-list">
+        <li>
+            <div class = "row justify-content-center">
+              <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title">Special title treatment</h5>
+                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+            </div>
+
+        </li>
+
+
+
+
+
+
+
+      </ul>
+      </div>
+
     </div>
     <script src="./Todo.js"></script>
+
+
+
+
+
+
+
   </body>
 </html>
