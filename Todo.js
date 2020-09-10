@@ -7,19 +7,35 @@ const classNames = {
 
 const list = document.getElementById('todo-list')
 const text = document.getElementById('textintodo')
+var cards = {}
 
 function newTodo() {
 
+  const title = document.querySelector('#todoTitle').value
+  const descrip = document.querySelector('#todoBody').value
 
-  todoElement = makeTodo()
+  if (title === "" || descrip === ""){
+
+    alert("You need to enter a Title and Description")
+     return 1
+  }
+
+  todoElement = makeTodo(title, descrip)
   render(todoElement, list)
+
+  document.querySelector('#todoTitle').value = ""
+  document.querySelector('#todoBody').value = ""
 
 
 }
 
-function makeTodo() {
+function makeTodo(title, descrip) {
+
 
    const li = document.createElement("li")
+   cards[Object.keys(cards).length] = li
+   addStyle(Object.keys(cards).length, "id", li)
+
 
    const div1 = document.createElement("div")
    addStyle("row justify-content-center", "class", div1)
@@ -32,17 +48,21 @@ function makeTodo() {
    addStyle("card-body", "class", div3)
 
    const h5 = document.createElement("h5")
-   h5.innerHTML = "Special title treatment"
+   h5.innerHTML = title
    addStyle("card-title", "class", h5)
 
    const p = document.createElement("p")
-   p.innerHTML = "With supporting text below as a natural lead-in to additional content"
+   p.innerHTML = descrip
    addStyle("card-text", "class", p)
 
    const a = document.createElement("a")
    addStyle("#", "href", a)
    addStyle("btn btn-primary", "class", a)
-   a.innerHTML = "Go somewhere"
+   str = "removeElement("
+   idfun = str.concat(Object.keys(cards).length,")")
+   addStyle(idfun, "onClick", a)
+
+   a.innerHTML = "Done"
 
    render(h5, div3)
    render(p, div3)
@@ -69,4 +89,12 @@ function textClickedClear() {
 
   text.value = ""
 
+}
+
+
+
+function removeElement(elementId) {
+    // Removes an element from the document
+    var element = document.getElementById(elementId);
+    element.parentNode.removeChild(element);
 }
