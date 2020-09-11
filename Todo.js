@@ -32,13 +32,14 @@ function newTodo() {
 function makeTodo(title, descrip) {
 
 
-   const li = document.createElement("li")
+   const li = document.createElement("div")
    cards[Object.keys(cards).length] = li
    addStyle(Object.keys(cards).length, "id", li)
 
 
    const div1 = document.createElement("div")
-   addStyle("row justify-content-center", "class", div1)
+   addStyle("row justify-content-center", "class", li)
+
 
    const div2 = document.createElement("div")
    addStyle("card", "class", div2)
@@ -62,14 +63,15 @@ function makeTodo(title, descrip) {
    idfun = str.concat(Object.keys(cards).length,")")
    addStyle(idfun, "onClick", a)
 
-   a.innerHTML = "Done"
+   a.innerHTML = "KO'ed!"
 
    render(h5, div3)
    render(p, div3)
    render(a, div3)
    render(div3, div2)
    render(div2,div1)
-   render(div1, li)
+   render(div1,li)
+
 
    return li
 
