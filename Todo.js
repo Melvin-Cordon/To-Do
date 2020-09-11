@@ -20,8 +20,11 @@ function newTodo() {
      return 1
   }
 
+  const blank = document.createElement("br")
   todoElement = makeTodo(title, descrip)
   render(todoElement, list)
+  render(blank, list)
+
 
   document.querySelector('#todoTitle').value = ""
   document.querySelector('#todoBody').value = ""
